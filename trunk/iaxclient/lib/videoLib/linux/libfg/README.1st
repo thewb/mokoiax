@@ -1,0 +1,8 @@
+This is a modified version of original libfg.
+
+
+Some codes in this directory has been changed to:
+ - Add use of YUV420 encoding
+ - Work with Linux kernel 2.6.x series
+
+Stefano Falsetto <falsetto@gnu.org>

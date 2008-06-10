@@ -1,0 +1,31 @@
+libiax2/src/md5.lo: libiax2/src/md5.c \
+  /usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/string.h \
+  /usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/features.h \
+  /usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/sys/cdefs.h \
+  /usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/bits/wordsize.h \
+  /usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/gnu/stubs.h \
+  /usr/local/openmoko/arm/lib/gcc/arm-angstrom-linux-gnueabi/4.1.2/include/stddef.h \
+  libiax2/src/md5.h \
+  /usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/inttypes.h \
+  /usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/stdint.h \
+  /usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/bits/wchar.h
+
+/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/string.h:
+
+/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/features.h:
+
+/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/sys/cdefs.h:
+
+/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/bits/wordsize.h:
+
+/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/gnu/stubs.h:
+
+/usr/local/openmoko/arm/lib/gcc/arm-angstrom-linux-gnueabi/4.1.2/include/stddef.h:
+
+libiax2/src/md5.h:
+
+/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/inttypes.h:
+
+/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/stdint.h:
+
+/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include/bits/wchar.h:
