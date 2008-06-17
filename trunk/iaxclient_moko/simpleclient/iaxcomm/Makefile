@@ -109,7 +109,7 @@ CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = ${SHELL} /usr/src/mokoiax-google/trunk/iaxclient_moko/missing --run aclocal-1.10
 ALSA_CFLAGS = -I/usr/local/openmoko/arm/include
-ALSA_LIBS = -L/usr/local/openmoko/arm/lib -lalsa
+ALSA_LIBS = -L/usr/local/openmoko/arm/lib -lalsa -lasound
 AMTAR = ${SHELL} /usr/src/mokoiax-google/trunk/iaxclient_moko/missing --run tar
 AR = arm-angstrom-linux-gnueabi-ar
 AS = arm-angstrom-linux-gnueabi-as
@@ -119,10 +119,10 @@ AUTOMAKE = ${SHELL} /usr/src/mokoiax-google/trunk/iaxclient_moko/missing --run a
 AWK = gawk
 CC = arm-angstrom-linux-gnueabi-gcc -march=armv4t -mtune=arm920t
 CCDEPMODE = depmode=gcc3
-CFLAGS = -isystem/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include -I/usr/local/openmoko/arm/include -isystem/usr/local/openmoko/arm/include -fexpensive-optimizations -fomit-frame-pointer -frename-registers -Os
+CFLAGS = -isystem/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include -I/usr/local/openmoko/arm/include -isystem/usr/local/openmoko/arm/include -fexpensive-optimizations -fomit-frame-pointer -frename-registers -Os -DAUDIO_PULSEAUDIO
 CLIENTS =  testcall
 CPP = arm-angstrom-linux-gnueabi-gcc -E
-CPPFLAGS = -isystem/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include
+CPPFLAGS = -isystem/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/include -L/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/usr/include -L/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/usr/include/c++/4.1.2 -isystem/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/usr/include -isystem/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/usr/include/c++/4.1.2 -L/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/usr/include/c++/4.1.2/arm-angstrom-linux-gnueabi -isystem/usr/local/openmoko/arm/arm-angstrom-linux-gnueabi/usr/include/c++/4.1.2/arm-angstrom-linux-gnueabi/
 CXX = ccache arm-angstrom-linux-gnueabi-g++ -march=armv4t -mtune=arm920t
 CXXCPP = ccache arm-angstrom-linux-gnueabi-g++ -march=armv4t -mtune=arm920t -E
 CXXDEPMODE = depmode=gcc3

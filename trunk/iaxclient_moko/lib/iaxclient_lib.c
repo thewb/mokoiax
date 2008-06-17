@@ -41,6 +41,10 @@
 #include "iax-client.h"
 #include "jitterbuf.h"
 
+#ifdef AUDIO_PULSEAUDIO
+#include "audio_pulseaudio.h"
+#endif
+
 #if STDC_HEADERS
 # include <stdarg.h>
 #else
