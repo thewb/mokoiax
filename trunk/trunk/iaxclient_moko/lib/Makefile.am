@@ -201,6 +201,8 @@ SRCS_IAX2=					\
 EXTRA_DIST = \
 	audio_alsa.c				\
 	audio_alsa.h				\
+	audio_pulseaudio.c			\
+	audio_pulseaudio.h			\
 	codec_ffmpeg.c				\
 	codec_ffmpeg.h				\
 	sound2c.pl				\

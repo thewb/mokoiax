@@ -627,13 +627,7 @@ EXPORT int iaxc_initialize(int num_calls)
 
 	if ( !test_mode )
 	{
-#ifndef AUDIO_ALSA
-		if ( pa_initialize(&audio_driver, 8000) )
-		{
-			iaxci_usermsg(IAXC_ERROR, "failed pa_initialize");
-			return -1;
-		}
-#else
+#ifdef AUDIO_ALSA
 		/* TODO: It is unknown whether this stuff for direct access to
 		* alsa should be left in iaxclient. We're leaving it in here for
 		* the time being, but unless it becomes clear that someone cares
@@ -641,9 +635,23 @@ EXPORT int iaxc_initialize(int num_calls)
 		* is capable of using alsa. This is another reason why this
 		* direct alsa access may be unneeded.
 		*/
-		printf("using alsa_initialize!! woot!\n");
 		if ( alsa_initialize(&audio_driver, 8000) )
 			return -1;
+#endif
+
+#ifdef AUDIO_PORTAUDIO
+		if ( pa_initialize(&audio_driver, 8000) )
+		{
+			iaxci_usermsg(IAXC_ERROR, "failed pa_initialize");
+			return -1;
+		}
+#endif
+#ifdef AUDIO_PULSEAUDIO
+		printf("Yay, using pulse_audio as the driver!\n\n");
+		if (pulse_initialize(&audio_driver, 8000))  {
+			iaxci_usermsg(IAXC_ERROR, "failed pulse_initialize");
+			return -1;
+		}
 #endif
 	}
 #ifdef USE_VIDEO
@@ -660,7 +668,7 @@ EXPORT int iaxc_initialize(int num_calls)
 	    IAXC_FORMAT_GSM |
 #endif
 	    IAXC_FORMAT_SPEEX;
-	audio_format_preferred = IAXC_FORMAT_SPEEX;
+	audio_format_preferred = IAXC_FORMAT_ULAW;
 
 	return 0;
 }
