@@ -5,7 +5,7 @@ if [ "$1" == "clean" ]
 then
 	echo -en "\n\n----Cleaning Moko IAX----\n\n"
 	a="third_party_libs"
-	for i in ${a}/libogg-1.1.3 ${a}/portaudio ${a}/speex-1.2beta3 ${a}/alsa-lib-1.0.15 ${a}/pulseaudio-0.9.10 ${a}/libsndfile-1.0.17 ${a}/libsamplerate-0.1.3 ${a}/liboil-0.3.14 
+	for i in ${a}/libogg-1.1.3 ${a}/portaudio ${a}/speex-1.2beta3 ${a}/alsa-lib-1.0.15 ${a}/pulseaudio-0.9.10 ${a}/libsndfile-1.0.17 ${a}/libsamplerate-0.1.3 ${a}/liboil-0.3.14 ${a}/libatomic_ops-1.2 ${a}/glib-2-16-3 
 	do
 		cd ${i}
 		make clean

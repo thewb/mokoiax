@@ -12,6 +12,7 @@
  *
  */
 
+#include "iaxclient_lib.h"
 #include <pulse/pulseaudio.h>
 #include <pulse/simple.h>
 #include <pulse/error.h>
@@ -19,7 +20,7 @@
 #include <errno.h>
 #include <string.h>
 
-static const pa_sample_spec ss
+static const pa_sample_spec ss;
 
 static pa_simple *s = NULL;
 
@@ -34,11 +35,11 @@ int pulse_stop_sound(int soundID) {
 }
 
 
-int pulse_start (struct iaxc_audio_driver *d) {
+int pulse_start(struct iaxc_audio_driver *d) {
     return 0;
 }
 
-int pulse_stop (struct iaxc_audio_driver *d) {
+int pulse_stop(struct iaxc_audio_driver *d) {
     return 0;
 }
 
@@ -56,7 +57,7 @@ int pulse_input(struct iaxc_audio_driver *d, void *samples, int *nSamples) {
     int error;    
 
     pa_simple_read(s, samples, sizeof(samples), &error); 
-    return read;
+    return nSamples;
 }
 
 int pulse_output(struct iaxc_audio_driver *d, void *samples, int nSamples) {
@@ -67,7 +68,7 @@ int pulse_output(struct iaxc_audio_driver *d, void *samples, int nSamples) {
     int error;
 
     pa_simple_write(s, samples, sizeof(samples), &error);
-    return written;
+    return nSamples;
 
 }
 

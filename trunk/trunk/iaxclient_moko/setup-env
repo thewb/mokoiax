@@ -36,6 +36,8 @@ export LIBOIL_CFLAGS="-I/usr/local/openmoko/arm/include"
 export LIBOIL_LIBS="-L/usr/local/openmoko/arm/lib -loil"
 export LIBSAMPLERATE_CFLAGS="-I/usr/local/openmoko/arm/include"
 export LIBSAMPLERATE_LIBS="-L/usr/local/openmoko/arm/lib -lsamplerate"
+export GLIB20_CFLAGS="-I/usr/local/openmoko/arm/include"
+export GLIB20_LIBS="-L/usr/local/openmoko/arm/lib"
 
 # End
 export CONFIG_SITE="${OMTOOL_DIR}/arm/site-config"
