@@ -33,7 +33,7 @@ IAXC_EVENT_VIDCAP_DEVICE = 13 # Indicates a possible video capture device insert
 ''' End iaxc_type '''
 
 ''' iaxc_event '''
-class iaxc_event_struct(Structure):
+class iaxc_event(Structure):
         _fields_ = [("type", c_int)]
 
 ''' End iaxc_event '''
