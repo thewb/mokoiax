@@ -39,6 +39,7 @@ def iax2_event_cb(e):
     Even register a callback for when the specific
     event happens. '''
     print "Event is " + e.Type
+    return 0
 
 
 ''' Try to init the library '''
@@ -47,6 +48,8 @@ if iax.iaxc_initialize(lines) != 0:
     sys.exit(1)
 
 ''' Set callback Function '''
+iax_func = IAXC_CB_TYPE(iax2_event_cb)
+
 #iax.iaxc_set_event_callback(iax2_event_cb)
 
 ''' Watch for incoming calls / second init '''
