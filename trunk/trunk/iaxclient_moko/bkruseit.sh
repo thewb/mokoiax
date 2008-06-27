@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "${UID}" != "0" ]
+then
+	echo "This script must be executed as root."
+	exit 1
+fi
+
 . setup-env
 if [ "$1" == "clean" ]
 then
