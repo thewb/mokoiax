@@ -12,114 +12,128 @@
  *
  */
 
+#include <errno.h>
+#include <string.h>
+
 #include "iaxclient_lib.h"
+
 #include <pulse/pulseaudio.h>
 #include <pulse/simple.h>
 #include <pulse/error.h>
 #include <pulsecore/gccmacro.h>
-#include <errno.h>
-#include <string.h>
 
 static const pa_sample_spec ss;
 
 static pa_simple *s = NULL;
 
-static int pulse_play_sound(struct iaxc_sound *inSound, int ring) {
+static int pulse_play_sound(struct iaxc_sound *inSound, int ring) 
+{
     /* Will implement this later, it is pretty simple. */
     return 0;
 }
 
-int pulse_stop_sound(int soundID) {
+static int pulse_stop_sound(int soundID) 
+{
     /* Will implement this later, it is pretty simple. */
     return 0;
 }
 
 
-int pulse_start(struct iaxc_audio_driver *d) {
+static int pulse_start(struct iaxc_audio_driver *d) 
+{
     return 0;
 }
 
-int pulse_stop(struct iaxc_audio_driver *d) {
+static int pulse_stop(struct iaxc_audio_driver *d) 
+{
     return 0;
 }
 
-void pulse_shutdown_audio()
+static void pulse_shutdown_audio()
 {
     return;
 }
 
-
-int pulse_input(struct iaxc_audio_driver *d, void *samples, int *nSamples) {
-
+static int pulse_input(struct iaxc_audio_driver *d, void *samples, int *nSamples) 
+{
     /* We do not need to loop and keep writing to the buffer,
     as simple write is a blocking function */
     /* Todo: check for errors */
     int error;    
 
     pa_simple_read(s, samples, sizeof(samples), &error); 
+
     return nSamples;
 }
 
-int pulse_output(struct iaxc_audio_driver *d, void *samples, int nSamples) {
+static int pulse_output(struct iaxc_audio_driver *d, void *samples, int nSamples) 
+{
+    int error;
 
     /* We do not need to loop and keep writing to the buffer,
     as simple write is a blocking function */
+
     /* Todo: check for errors */
-    int error;
 
     pa_simple_write(s, samples, sizeof(samples), &error);
+    
     return nSamples;
 
 }
 
-int pulse_select_devices (struct iaxc_audio_driver *d, int input, int output, int ring) {
+static int pulse_select_devices(struct iaxc_audio_driver *d, int input, int output, int ring) 
+{
     return 0;
 }
 
-int pulse_selected_devices (struct iaxc_audio_driver *d, int *input, int *output, int *ring) {
+int pulse_selected_devices(struct iaxc_audio_driver *d, int *input, int *output, int *ring) 
+{
     *input = 0;
     *output = 0;
     *ring = 0;
     return 0;
 }
 
-int pulse_destroy (struct iaxc_audio_driver *d )
+static int pulse_destroy(struct iaxc_audio_driver *d)
 {
     /* if our resources is open, we are going to
     delete all the data in the buffers before freeing */ 
-    if(s)
-	pa_simple_flush();
+    if (s)
+        pa_simple_flush();
 
     /* if our resource is still open, close it */
-    if(s)
+    if (s)
         pa_simple_free(s);
 
     return 0;
 }
 
-double pulse_input_level_get(struct iaxc_audio_driver *d){
+static double pulse_input_level_get(struct iaxc_audio_driver *d)
+{
     return -1;
 }
 
-double pulse_output_level_get(struct iaxc_audio_driver *d){
+static double pulse_output_level_get(struct iaxc_audio_driver *d)
+{
     return -1;
 }
 
-int pulse_input_level_set(struct iaxc_audio_driver *d, double level){
+static int pulse_input_level_set(struct iaxc_audio_driver *d, double level)
+{
     return -1;
 }
 
-int pulse_output_level_set(struct iaxc_audio_driver *d, double level){
+static int pulse_output_level_set(struct iaxc_audio_driver *d, double level)
+{
     return -1;
 }
 
 /* Function: Actually init pa */
-int pulse_initialize(struct iaxc_audio_driver *d, int sample_rate) {
-
-
+int pulse_initialize(struct iaxc_audio_driver *d, int sample_rate) 
+{
     /* init our settings for the pulse audio simple setup */
-    if(!sample_rate || sample_rate < 8000)
-	sample_rate = 8000;
+    if (!sample_rate || sample_rate < 8000)
+        sample_rate = 8000;
 
     ss.channels = 2; /* Stereo? */
     ss.rate = sample_rate; /* Most likely 8000... */
