@@ -16,7 +16,15 @@ Milestone 1)
 
 
 Milestone 2)
- - 
+ - Implement a simple dialer interface which uses IAXClient for making calls
+ - Have account setup in a configuration file
+
+Milestone 3)
+ - Implement GUI based account management
+
+Milestone 4)
+ - Platform Integration - long term goal of having a single dialer which can
+   make calls using GSM or VoIP.  Details TBD
 
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
