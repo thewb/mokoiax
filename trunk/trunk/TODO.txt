@@ -14,15 +14,19 @@ Milestone 1)
 
   Status: ?
 
-
 Milestone 2)
+  - Implement python bindings for IAXClient
+  - Create a testclient like console application that uses IAXClient via python
+    that makes use of the python bindings
+
+Milestone 3)
  - Implement a simple dialer interface which uses IAXClient for making calls
  - Have account setup in a configuration file
 
-Milestone 3)
+Milestone 4)
  - Implement GUI based account management
 
-Milestone 4)
+Milestone 5)
  - Platform Integration - long term goal of having a single dialer which can
    make calls using GSM or VoIP.  Details TBD
 

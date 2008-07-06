@@ -23,7 +23,7 @@ a protocol that "just works" will prove extremely beneficial.
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
---- Instructions
+--- Build and Installation Instructions
 -------------------------------------------------------------------------------
 
 todo ...
@@ -35,7 +35,11 @@ todo ...
 --- Development
 -------------------------------------------------------------------------------
 
-For development information, see TODO.txt.
+This project involves making some changes to IAXClient, as well as some
+application development around IAXClient.  All changes to IAXClient will
+eventually be submitted back for inclusion into the official IAXClient project.
+
+For more development information, see TODO.txt.
 
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
