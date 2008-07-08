@@ -52,20 +52,22 @@ static int pulse_stop_sound(int soundID)
 }
 
 
+/*
+ * Start audio I/O.
+ */
 static int pulse_start(struct iaxc_audio_driver *d) 
 {
 	return 0;
 }
 
+/*
+ * Stop audio I/O.
+ */
 static int pulse_stop(struct iaxc_audio_driver *d) 
 {
 	return 0;
 }
 
-static void pulse_shutdown_audio()
-{
-	return;
-}
 
 static int pulse_input(struct iaxc_audio_driver *d, void *samples, int *nSamples) 
 {
