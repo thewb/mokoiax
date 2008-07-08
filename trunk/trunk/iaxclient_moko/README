@@ -234,9 +234,9 @@ need to change AUDIO_ALSA=0 to AUDIO_ALSA=1 in the Makefile.
 
 *************** MOKO IAX *************************
 
-These are some bkruse instructions, not iaxclient: 
+These are some mokoiax instructions, not iaxclient: 
 
-To build, you can try to ./bkruseit.sh
+To build, you can try to ./mokoiax_build.sh
 
 If that does not work, watch these commands and find what is wrong.
 
