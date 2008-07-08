@@ -2,7 +2,8 @@
  * iaxclient: a cross-platform IAX softphone library
  *
  * Copyrights:
- * Copyright (C) 2008 Brandon Kruse
+ * Copyright (C) 2008 - Brandon Kruse
+ * Copyright (C) 2008 - Digium, Inc. 
  *
  * Contributors:
  * Brandon Kruse <bkruse@openmoko.org>
