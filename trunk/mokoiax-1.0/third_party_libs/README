@@ -1,4 +1,0 @@
-these are cross-compiled third party libraries
-
-(with toolkit)
-./configure --host=arm-angstrom-linux-gnueabi --prefix=/usr/local/openmoko/arm
