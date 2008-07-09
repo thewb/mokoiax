@@ -12,7 +12,7 @@ PN = "mokoiax"
 PV = "1.0"
 
 SRCDATE_${PN} = "now"
-SRC_URI = "svn://mokoiax.googlecode.com/svn/trunk/trunk/iaxclient_moko;proto=http;module=${PN}-${PV}"
+SRC_URI = "svn://mokoiax.googlecode.com/svn/trunk/trunk;proto=http;module=${PN}-${PV}"
 
 #for a tarball use:
 #SRC_URI = "http://server/path/package/${PN}-${PV}.tar.gz"
