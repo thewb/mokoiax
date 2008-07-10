@@ -7,7 +7,6 @@
 -------------------------------------------------------------------------------
 
 Milestone 1)
-  - Implement PulseAudio support for IAXClient
   - Have IAXClient and supporting libraries cross compiled for OpenMoko
   - Demonstrate testclient functionality from an OpenMoko GTA02 device
   - Distribute working testclient and supporting libraries as package(s)
