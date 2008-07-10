@@ -1,5 +1,7 @@
 #!/bin/bash
 
+IAXCLIENT="iaxclient-2.1beta3"
+
 if [ "${UID}" != "0" ]
 then
 	echo "This script must be executed as root."
@@ -18,8 +20,10 @@ then
 		make distclean
 		cd ../../
 	done
+	cd ${IAXCLIENT}
 	make clean
 	make distclean
+	cd ..
 	echo -en "\n\n\n\n----Done----\n\n"
 	exit 0
 fi
@@ -33,15 +37,15 @@ fi
 echo -en "\n\n----Building and Installing Moko IAX----\n\n"
 sleep 3
 
-cd lib/gsm
+cd ${IAXCLIENT}/lib/gsm
 ./configure 2> /dev/null
 make
 make install
-cd ../../
+cd ../../../
 cd third_party_libs
 ./install.sh
-cd ../
+cd ../${IAXCLIENT}
 ./configure --host=arm-angstrom-linux-gnueabi --prefix=/usr/local/openmoko/arm  --without-video --without-theora --without-vidcap --enable-clients=testcall && make && make install
 #./configure --host=arm-angstrom-linux-gnueabi --prefix=/usr/local/openmoko/arm  --without-video --without-theora --without-vidcap --disable-speex-preproces make && make install
-
+cd ..
 echo -en "\n\n-----MokoiAX DONE Building!-----\n\n"
