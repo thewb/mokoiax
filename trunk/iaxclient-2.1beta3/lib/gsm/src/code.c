@@ -9,13 +9,9 @@
 #include	"config.h"
 
 
-//#ifdef	HAS_STDLIB_H
 #include	<stdlib.h>
-//#else
 #	include "proto.h"
 #	include "string.h"
-	//extern char	* memcpy P((char *, char *, int));
-//#endif
 
 #include	"private.h"
 #include	"gsm.h"
