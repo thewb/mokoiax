@@ -55,7 +55,7 @@ PG =
 # CCFLAGS 	= -c -O
 
 CC		= gcc -ansi -pedantic -O6 -mpentium -fschedule-insns2  -fomit-frame-pointer 
-CCFLAGS 	+= -c -DNeedFunctionPrototypes=1 -finline-functions -funroll-loops
+CCFLAGS 	+= -c -DNeedFunctionPrototypes=1 -finline-functions -funroll-loops -fPIC
 
 LD 		= $(CC)
 
@@ -175,7 +175,6 @@ GSM_SOURCES =	$(SRC)/add.c		\
 		$(SRC)/code.c		\
 		$(SRC)/debug.c		\
 		$(SRC)/decode.c		\
-		$(SRC)/k6opt.s	\
 		$(SRC)/long_term.c	\
 		$(SRC)/lpc.c		\
 		$(SRC)/preprocess.c	\
@@ -220,7 +219,6 @@ GSM_OBJECTS =	$(SRC)/add.o		\
 		$(SRC)/code.o		\
 		$(SRC)/debug.o		\
 		$(SRC)/decode.o		\
-		$(SRC)/k6opt.o	\
 		$(SRC)/long_term.o	\
 		$(SRC)/lpc.o		\
 		$(SRC)/preprocess.o	\
