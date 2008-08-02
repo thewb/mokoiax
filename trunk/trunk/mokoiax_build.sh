@@ -45,7 +45,7 @@ cd ../../../
 cd third_party_libs
 ./install.sh
 cd ../${IAXCLIENT}
-./configure --host=arm-angstrom-linux-gnueabi --prefix=/usr/local/openmoko/arm  --without-video --without-theora --without-vidcap --enable-clients=testcall && make && make install
+./configure --host=arm-angstrom-linux-gnueabi --prefix=/usr/local/openmoko/arm  --without-video --without-theora --without-vidcap --enable-video=no --enable-clients=testcall && make && make install
 #./configure --host=arm-angstrom-linux-gnueabi --prefix=/usr/local/openmoko/arm  --without-video --without-theora --without-vidcap --disable-speex-preproces make && make install
 cd ..
 echo -en "\n\n-----MokoiAX DONE Building!-----\n\n"
