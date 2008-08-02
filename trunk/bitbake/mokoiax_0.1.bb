@@ -9,7 +9,7 @@ SECTION = "bkruse/mokoiax"
 LICENSE = "GPLv3"
 
 PN = "mokoiax"
-PV = "1.0"
+PV = "0.1"
 
 #for a tarball use:
 SRC_URI = "http://mokoiax.googlecode.com/svn/tarballs/${PN}-${PV}.tar.gz"
