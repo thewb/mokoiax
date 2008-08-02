@@ -7,7 +7,7 @@ then
 	exit 0
 fi
 sleep 1
-for i in libogg-1.1.3 speex-1.2beta3 libsndfile-1.0.17 libsamplerate-0.1.3 liboil-0.3.14 libatomic_ops-1.2 glib-2.16.3 pulseaudio-0.9.10 
+for i in libogg-1.1.3 speex-1.2beta3 libsndfile-1.0.17 libsamplerate-0.1.3 liboil-0.3.14 libatomic_ops-1.2 glib-2.16.3 
 #for i in libogg-1.1.3 portaudio speex-1.2beta3 
 do
 	echo -en "\n\n\nBuilding the $i Library\n\n\n"
