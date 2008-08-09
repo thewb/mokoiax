@@ -70,6 +70,8 @@
 
 #include "ringbuffer.h"
 
+#define ALLOW_SMP_DANGERS
+
 /****************
  * First, we'll define some memory barrier primitives based on the system.
  * right now only OS X, FreeBSD, and Linux are supported. In addition to providing
