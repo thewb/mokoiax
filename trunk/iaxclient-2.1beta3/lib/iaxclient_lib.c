@@ -49,6 +49,7 @@
 # endif
 #endif
 
+// #define AUDIO_ALSA
 #ifdef AUDIO_ALSA
 #include "audio_alsa.h"
 #endif
